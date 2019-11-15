@@ -2,9 +2,11 @@
 #include <ESP8266HTTPClient.h>
 
 // Network Parameters
-// TO DO //
-char ssid[] = ""; //SSID of your Wi-Fi router
-char pass[] = ""; //Password of your Wi-Fi router
+// TODO: outsource these into a separate file, .gitignore that and import it here
+//       probably has to be a library? arduino.cc/en/Hacking/LibraryTutorial
+
+char ssid[] = ""; // SSID of your Wi-Fi router
+char pass[] = ""; // Password of your Wi-Fi router
 char accessToken[] = "";
 
 char pingAddress[] = ""; // sensor ping end point
