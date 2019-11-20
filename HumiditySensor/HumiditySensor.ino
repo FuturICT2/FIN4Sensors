@@ -25,7 +25,7 @@ int pushButton = D1;
 int sensorPin1 = A0; // Humidity-Sensor
 
 // Control Variables
-int isPinging = 1; 
+int isPinging = 0; // 0 = off, 1 = on 
 int allowChange = 0;
 int buttonPressed = 0;
 int pressedBefore = 0; // Old Button value
@@ -127,10 +127,10 @@ void loop () {
   if (val < (average - 100*(float(average) / 450)) && not VerificationSent) {
 
     // Send Verification
-    //verifyClaim();
+    verifyClaim();
 
     // Logging
-    Serial.println("************* CLAB ************* Plant has been watered *** token has been issued ******");
+    Serial.println("************* CLAP ************* Plant has been watered *** token has been issued ******");
     Serial.println(val);
 
     // Turn on Led
