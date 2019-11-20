@@ -9,8 +9,8 @@ char ssid[] = ""; // SSID of your Wi-Fi router
 char pass[] = ""; // Password of your Wi-Fi router
 char accessToken[] = "";
 
-char pingAddress[] = ""; // sensor ping end point
-char verificationAddress[] = ""; // Claim verification end point
+char pingAddress[] = "http://fin4oracleengine.ngrok.io/sensor"; // sensor ping end point
+char verificationAddress[] = "http://fin4oracleengine.ngrok.io/sensor"; // Claim verification end point
 bool VerificationSent = false;
 
 // Computation Variables
