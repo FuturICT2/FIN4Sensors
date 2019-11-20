@@ -155,13 +155,13 @@ void ping() {
   HTTPClient http;
 
   // Specify Ping destination
-  http.begin(pingAddress);
+  http.begin(pingAddress + String("?id=PlantWateringSensor&data=ThePlantSaysThanksForWatering"));
 
   // Specify Content type and authenticate as Oracle
   http.addHeader("Content-Type", "application/json");
 
   // Send Request and receive http Code
-  int httpCode = http.POST(String("{\"accessToken\": \"") + accessToken + String("\"}"));
+  int httpCode = http.POST(""); //String("{\"accessToken\": \"") + accessToken + String("\"}"));
 
   // Logging
   if (httpCode == 200) {
@@ -181,13 +181,13 @@ void verifyClaim() {
   HTTPClient http;
 
   // Specify request destination
-  http.begin(verificationAddress);
+  http.begin(verificationAddress + String("?id=PlantWateringSensor&data=ThePlantSaysThanksForWatering"));
 
   // Specify content-type header and "log in" as Oracle
   http.addHeader("Content-Type", "application/json");
 
   // Actually send the request
-  int httpCode = http.POST(String("{\"isAccepted\": true, \"accessToken\": \"") + accessToken + String("\"}"));
+  int httpCode = http.POST("");//String("{\"isAccepted\": true, \"accessToken\": \"") + accessToken + String("\"}"));
 
   // Get the response payload
   String payload = http.getString();
